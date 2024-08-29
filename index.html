@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple Choice Quiz</title>
+    <title>Quiz</title>
     <link rel="stylesheet" href="style.css">
-  
-
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Multiple Choice Quiz</h1>
+    <div class="container">
+        <h1>Quiz</h1> <!-- Updated heading -->
         <form id="quiz-form">
-            <div class="question">
-                <p>What is the capital of France?</p>
-                <label>
-                    <input type="radio" name="question1" value="Paris"> Paris
-                </label>
-                <label>
-                    <input type="radio" name="question1" value="London"> London
-                </label>
-                <label>
-                    <input type="radio" name="question1" value="Berlin"> Berlin
-                </label>
-                <label>
-                    <input type="radio" name="question1" value="Madrid"> Madrid
-                </label>
+            <div id="question-1" class="question">
+                <h2>1) Anti-clockwise moves in which direction?</h2>
+                <label><input type="radio" name="q1" value="A"> Left</label><br>
+                <label><input type="radio" name="q1" value="B"> Right</label><br>
+                <label><input type="radio" name="q1" value="C"> Up</label><br>
+                <label><input type="radio" name="q1" value="D"> Down</label><br>
             </div>
-            <button type="button" onclick="submitQuiz()">Submit</button>
+            <div id="question-2" class="question">
+                <h2>2) Who is known as the “Father of Modern Physics”?</h2>
+                <label><input type="radio" name="q2" value="A"> Isaac Newton</label><br>
+                <label><input type="radio" name="q2" value="B"> Albert Einstein</label><br>
+                <label><input type="radio" name="q2" value="C"> Niels Bohr</label><br>
+                <label><input type="radio" name="q2" value="D"> Galileo Galilei</label><br>
+            </div>
+            <div id="question-3" class="question">
+                <h2>3) In what year did the Titanic sink?</h2>
+                <label><input type="radio" name="q3" value="A"> 1912</label><br>
+                <label><input type="radio" name="q3" value="B"> 1905</label><br>
+                <label><input type="radio" name="q3" value="C"> 1898</label><br>
+                <label><input type="radio" name="q3" value="D"> 1923</label><br>
+            </div>
+            <button type="button" id="prev-button" onclick="prevQuestion()">Previous</button>
+            <button type="button" id="next-button" onclick="nextQuestion()">Next</button>
         </form>
-        <div id="result"></div>
     </div>
-
-    
-    <script src="index.js">
-      
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
