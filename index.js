@@ -1,19 +1,29 @@
-function submitQuiz() {
-  const form = document.getElementById('quiz-form');
-  const resultDiv = document.getElementById('result');
-  const selectedOption = form.querySelector('input[name="question1"]:checked');
+let currentQuestion = 1;
 
-  if (selectedOption) {
-      const answer = selectedOption.value;
-      if (answer === 'Paris') {
-          resultDiv.textContent = 'Correct! The capital of France is Paris.';
-          resultDiv.style.color = 'green';
-      } else {
-          resultDiv.textContent = 'Incorrect. The capital of France is Paris.';
-          resultDiv.style.color = 'red';
-      }
-  } else {
-      resultDiv.textContent = 'Please select an option.';
-      resultDiv.style.color = 'orange';
-  }
+document.addEventListener('DOMContentLoaded', () => {
+    showQuestion(currentQuestion); 
+});
+
+function showQuestion(questionNumber) {
+    const questions = document.querySelectorAll('.question');
+    questions.forEach(q => q.classList.remove('active'));
+
+    document.getElementById(`question-${questionNumber}`).classList.add('active');
+
+    document.getElementById('prev-button').style.display = questionNumber === 1 ? 'none' : 'inline-block';
+    document.getElementById('next-button').style.display = questionNumber === 3 ? 'none' : 'inline-block';
+}
+
+function nextQuestion() {
+    if (currentQuestion < 3) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestion > 1) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+    }
 }
