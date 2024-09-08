@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="results-container">
+        <h1>Quiz Results</h1>
+        <div id="result"></div>
+        <p class="congratulations">Congratulations for completing the quiz!</p>
+        <a href="index2.html" class="btn">Take the Quiz Again</a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const resultDiv = document.getElementById('result');
+            const results = localStorage.getItem('quizResults');
+            
+            if (results) {
+                resultDiv.innerHTML = results;
+                localStorage.removeItem('quizResults'); // Clear results from localStorage
+            } else {
+                resultDiv.innerHTML = '<p>No results found.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
