@@ -4,37 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <div class="container">
-        <h1>Quiz</h1> <!-- Updated heading -->
+        <h1>Quiz</h1>
         <form id="quiz-form">
-            <div id="question-1" class="question">
-                <h2>1) Anti-clockwise moves in which direction?</h2>
-                <label><input type="radio" name="q1" value="A"> Left</label><br>
-                <label><input type="radio" name="q1" value="B"> Right</label><br>
-                <label><input type="radio" name="q1" value="C"> Up</label><br>
-                <label><input type="radio" name="q1" value="D"> Down</label><br>
+            <!-- Question containers will be hidden or shown based on the current question -->
+            <div class="question" id="question-1">
+                <p>1. Anti-clockwise moves in which direction?</p>
+                <input type="radio" id="q1a" name="q1" value="A">
+                <label for="q1a">A) Left</label><br>
+                <input type="radio" id="q1b" name="q1" value="B">
+                <label for="q1b">B) Right</label><br>
+                <input type="radio" id="q1c" name="q1" value="C">
+                <label for="q1c">C) Up</label><br>
+                <input type="radio" id="q1d" name="q1" value="D">
+                <label for="q1d">D) Down</label>
             </div>
-            <div id="question-2" class="question">
-                <h2>2) Who is known as the “Father of Modern Physics”?</h2>
-                <label><input type="radio" name="q2" value="A"> Isaac Newton</label><br>
-                <label><input type="radio" name="q2" value="B"> Albert Einstein</label><br>
-                <label><input type="radio" name="q2" value="C"> Niels Bohr</label><br>
-                <label><input type="radio" name="q2" value="D"> Galileo Galilei</label><br>
+            
+            <div class="question" id="question-2">
+                <p>2. Who is known as the “Father of Modern Physics”?</p>
+                <input type="radio" id="q2a" name="q2" value="A">
+                <label for="q2a">A) Isaac Newton</label><br>
+                <input type="radio" id="q2b" name="q2" value="B">
+                <label for="q2b">B) Albert Einstein</label><br>
+                <input type="radio" id="q2c" name="q2" value="C">
+                <label for="q2c">C) Niels Bohr</label><br>
+                <input type="radio" id="q2d" name="q2" value="D">
+                <label for="q2d">D) Galileo Galilei</label>
             </div>
-            <div id="question-3" class="question">
-                <h2>3) In what year did the Titanic sink?</h2>
-                <label><input type="radio" name="q3" value="A"> 1912</label><br>
-                <label><input type="radio" name="q3" value="B"> 1905</label><br>
-                <label><input type="radio" name="q3" value="C"> 1898</label><br>
-                <label><input type="radio" name="q3" value="D"> 1923</label><br>
+            
+            <div class="question" id="question-3">
+                <p>3. In what year did the Titanic sink?</p>
+                <input type="radio" id="q3a" name="q3" value="A">
+                <label for="q3a">A) 1912</label><br>
+                <input type="radio" id="q3b" name="q3" value="B">
+                <label for="q3b">B) 1905</label><br>
+                <input type="radio" id="q3c" name="q3" value="C">
+                <label for="q3c">C) 1898</label><br>
+                <input type="radio" id="q3d" name="q3" value="D">
+                <label for="q3d">D) 1923</label>
             </div>
+            
+            <div class="question" id="question-4">
+                <p>4. The sun rises in the?</p>
+                <input type="radio" id="q4a" name="q4" value="A">
+                <label for="q4a">A) East</label><br>
+                <input type="radio" id="q4b" name="q4" value="B">
+                <label for="q4b">B) West</label><br>
+                <input type="radio" id="q4c" name="q4" value="C">
+                <label for="q4c">C) North</label><br>
+                <input type="radio" id="q4d" name="q4" value="D">
+                <label for="q4d">D) South</label>
+            </div>
+
             <button type="button" id="prev-button" onclick="prevQuestion()">Previous</button>
             <button type="button" id="next-button" onclick="nextQuestion()">Next</button>
+            <button type="button" id="submit-button" onclick="submitQuiz()">Submit</button>
         </form>
+        <div id="result"></div>
     </div>
-    <script src="index.js"></script>
+    <script src="index2.js"></script>
 </body>
 </html>
